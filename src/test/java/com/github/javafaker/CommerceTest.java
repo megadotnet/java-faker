@@ -3,6 +3,7 @@ package com.github.javafaker;
 import org.junit.Test;
 
 import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 import static com.github.javafaker.matchers.MatchesRegularExpression.matchesRegularExpression;
 import static org.junit.Assert.assertThat;
@@ -33,6 +34,14 @@ public class CommerceTest extends AbstractFakerTest {
     @Test
     public void testMaterial() {
         assertThat(faker.commerce().material(), matchesRegularExpression("\\w+"));
+
+        int sum=0;
+        for (int i=1; i<=10;i++){
+            Faker faker = new Faker(new Locale("zh-cn"));
+            String firstName = faker.commerce().material();
+        }
+
+
     }
 
     @Test
